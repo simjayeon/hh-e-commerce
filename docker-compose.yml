@@ -7,8 +7,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_USER=application
-      - MYSQL_PASSWORD=application
-      - MYSQL_DATABASE=hhplus
+      - MYSQL_PASSWORD=App!ication123
+      - MYSQL_DATABASE=ecommerce
     volumes:
       - ./data/mysql/:/var/lib/mysql
 
