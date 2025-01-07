@@ -5,10 +5,7 @@ import kr.hhplus.be.server.domains.service.CouponService;
 import kr.hhplus.be.server.dto.response.CouponResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +20,11 @@ public class CouponController {
     @Operation(summary = "getUserCoupons", description = "사용자 보유 쿠폰 목록 조회")
     public ResponseEntity<List<CouponResponse>> getUserCoupons(@PathVariable Long userId) {
         return couponService.getUserCoupons(userId);
+    }
+
+    @PostMapping("/issue/{userId}")
+    public ResponseEntity<Boolean> issueCoupon(@PathVariable Long userId) {
+        return couponService.issueCoupon(userId);
     }
 
 }
