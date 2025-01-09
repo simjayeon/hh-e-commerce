@@ -1,13 +1,19 @@
 package kr.hhplus.be.server.entity;
 
+import com.querydsl.core.types.EntityPath;
 import jakarta.persistence.*;
 import kr.hhplus.be.server.entity.common.BaseEntity;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Getter
+@Setter
+@Builder
 @Table(name = "order")
 public class Order extends BaseEntity {
 
@@ -30,5 +36,9 @@ public class Order extends BaseEntity {
 
     @Column(name = "ordered_at")
     private Timestamp orderedAt;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "id", insertable = false, updatable = false)
+    private User user;
 
 }
