@@ -1,7 +1,7 @@
-package kr.hhplus.be.server.domains.controller;
+package kr.hhplus.be.server.domain.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
-import kr.hhplus.be.server.domains.service.OrderService;
+import kr.hhplus.be.server.domain.service.OrderService;
 import kr.hhplus.be.server.dto.request.OrderRequest;
 import kr.hhplus.be.server.dto.response.OrderResponse;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +23,7 @@ public class OrderController {
         return orderService.getOrders(userId, orderId);
     }
 
-    @GetMapping("")
+    @PostMapping("")
     @Operation(summary = "createOrder", description = "주문 요청")
     public ResponseEntity<Boolean> createOrder(@RequestBody OrderRequest req) {
         return orderService.createOrder(req);

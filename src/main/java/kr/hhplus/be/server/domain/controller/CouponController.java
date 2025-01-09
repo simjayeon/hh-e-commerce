@@ -1,7 +1,7 @@
-package kr.hhplus.be.server.domains.controller;
+package kr.hhplus.be.server.domain.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
-import kr.hhplus.be.server.domains.service.CouponService;
+import kr.hhplus.be.server.domain.service.CouponService;
 import kr.hhplus.be.server.dto.response.CouponResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/coupons")
 @RequiredArgsConstructor
+@RequestMapping("/api/v1/coupons")
 public class CouponController {
 
     private final CouponService couponService;

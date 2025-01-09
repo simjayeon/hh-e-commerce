@@ -1,4 +1,4 @@
-package kr.hhplus.be.server.domains.controller;
+package kr.hhplus.be.server.domain.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;

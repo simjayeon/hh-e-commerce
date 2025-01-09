@@ -1,7 +1,5 @@
-package kr.hhplus.be.server.domains.service;
+package kr.hhplus.be.server.domain.service;
 
-import kr.hhplus.be.server.dto.request.OrderRequest;
-import kr.hhplus.be.server.dto.response.OrderResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package kr.hhplus.be.server.domains.service;
+package kr.hhplus.be.server.domain.service;
 
 import kr.hhplus.be.server.dto.response.CouponResponse;
 import lombok.RequiredArgsConstructor;

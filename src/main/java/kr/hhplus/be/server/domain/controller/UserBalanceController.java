@@ -1,7 +1,7 @@
-package kr.hhplus.be.server.domains.controller;
+package kr.hhplus.be.server.domain.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
-import kr.hhplus.be.server.domains.service.UserBalanceService;
+import kr.hhplus.be.server.domain.service.UserBalanceService;
 import kr.hhplus.be.server.dto.request.RechargeBalanceRequest;
 import kr.hhplus.be.server.dto.response.UserBalanceResponse;
 import lombok.RequiredArgsConstructor;

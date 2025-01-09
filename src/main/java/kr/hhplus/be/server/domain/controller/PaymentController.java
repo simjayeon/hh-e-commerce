@@ -1,7 +1,7 @@
-package kr.hhplus.be.server.domains.controller;
+package kr.hhplus.be.server.domain.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
-import kr.hhplus.be.server.domains.service.PaymentService;
+import kr.hhplus.be.server.domain.service.PaymentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
