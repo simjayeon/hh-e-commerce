@@ -1,6 +1,6 @@
 package kr.hhplus.be.server.domain.service;
 
-import kr.hhplus.be.server.dto.response.CouponResponse;
+import kr.hhplus.be.server.interfaces.dto.response.CouponResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

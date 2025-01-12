@@ -1,8 +1,8 @@
 package kr.hhplus.be.server.domain.service;
 
-import kr.hhplus.be.server.domain.repository.ProductRepositoryImpl;
-import kr.hhplus.be.server.dto.response.ProductResponse;
-import kr.hhplus.be.server.entity.Product;
+import kr.hhplus.be.server.infra.repository.ProductRepositoryImpl;
+import kr.hhplus.be.server.interfaces.dto.response.ProductResponse;
+import kr.hhplus.be.server.domain.entity.Product;
 import kr.hhplus.be.server.support.exception.ErrorCode;
 import kr.hhplus.be.server.support.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;

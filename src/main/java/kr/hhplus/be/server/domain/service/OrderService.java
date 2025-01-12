@@ -1,13 +1,13 @@
 package kr.hhplus.be.server.domain.service;
 
-import kr.hhplus.be.server.domain.repository.OrderItemRepositoryImpl;
-import kr.hhplus.be.server.domain.repository.OrderRepositoryImpl;
-import kr.hhplus.be.server.dto.request.OrderRequest;
-import kr.hhplus.be.server.dto.request.ProductRequest;
-import kr.hhplus.be.server.dto.response.OrderResponse;
-import kr.hhplus.be.server.dto.response.ProductResponse;
-import kr.hhplus.be.server.entity.Order;
-import kr.hhplus.be.server.entity.OrderItem;
+import kr.hhplus.be.server.infra.repository.OrderItemRepositoryImpl;
+import kr.hhplus.be.server.infra.repository.OrderRepositoryImpl;
+import kr.hhplus.be.server.interfaces.dto.request.OrderRequest;
+import kr.hhplus.be.server.interfaces.dto.request.ProductRequest;
+import kr.hhplus.be.server.interfaces.dto.response.OrderResponse;
+import kr.hhplus.be.server.interfaces.dto.response.ProductResponse;
+import kr.hhplus.be.server.domain.entity.Order;
+import kr.hhplus.be.server.domain.entity.OrderItem;
 import kr.hhplus.be.server.support.exception.ErrorCode;
 import kr.hhplus.be.server.support.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
