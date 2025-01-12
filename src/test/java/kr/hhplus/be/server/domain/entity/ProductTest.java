@@ -1,6 +1,5 @@
-package kr.hhplus.be.server.domain.service.entity;
+package kr.hhplus.be.server.domain.entity;
 
-import kr.hhplus.be.server.domain.entity.Product;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
