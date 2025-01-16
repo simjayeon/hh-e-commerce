@@ -1,18 +1,17 @@
 package kr.hhplus.be.server.domain.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.sql.Timestamp;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
-@Getter
-@Setter
-@Builder
-@Table(name = "order")
-public class Order extends BaseEntity {
+@Data
+@RequiredArgsConstructor
+@AllArgsConstructor
+@Table(name = "`order`")
+public final class Order extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,15 +1,14 @@
 package kr.hhplus.be.server.domain.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
-@Builder
 @Table(name = "order_item")
+@RequiredArgsConstructor
+@AllArgsConstructor
 public class OrderItem extends BaseEntity {
 
     @Id
@@ -17,8 +16,8 @@ public class OrderItem extends BaseEntity {
     @Column(name = "id")
     private Long id;
 
-//    @Column(name = "order_id")
-//    private Long orderId;
+    @Column(name = "order_id")
+    private Long orderId;
 
     @Column(name = "product_id")
     private Long productId;

@@ -1,6 +1,7 @@
 package kr.hhplus.be.server.interfaces.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import jakarta.validation.Valid;
 import kr.hhplus.be.server.domain.service.OrderService;
 import kr.hhplus.be.server.interfaces.dto.request.OrderRequest;
 import kr.hhplus.be.server.interfaces.dto.response.OrderResponse;
@@ -25,7 +26,7 @@ public class OrderController {
 
     @PostMapping("")
     @Operation(summary = "createOrder", description = "주문 요청")
-    public ResponseEntity<Boolean> createOrder(@RequestBody OrderRequest req) {
+    public ResponseEntity<Boolean> createOrder(@Valid @RequestBody OrderRequest req) {
         return orderService.createOrder(req);
     }
 

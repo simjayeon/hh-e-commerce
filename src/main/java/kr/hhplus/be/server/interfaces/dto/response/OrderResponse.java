@@ -24,4 +24,14 @@ public record OrderResponse(
                 .products(productResponses)
                 .build();
     }
+
+    private double calculateTotalAmount() {
+        double total = 0;
+        for (ProductResponse product : products) {
+            total += product.productPrice() * product.productQuantity();
+        }
+        return total;
+    }
+
+
 }
