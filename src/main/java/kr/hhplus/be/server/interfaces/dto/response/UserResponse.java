@@ -3,8 +3,8 @@ package kr.hhplus.be.server.interfaces.dto.response;
 
 public record UserResponse(
         Long userId,
-        String userName,
+        String name,
         Integer email,
-        Integer productQuantity
+        String password
 ) {
 }
