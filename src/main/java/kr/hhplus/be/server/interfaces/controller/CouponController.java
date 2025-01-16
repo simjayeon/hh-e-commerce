@@ -1,6 +1,7 @@
 package kr.hhplus.be.server.interfaces.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import kr.hhplus.be.server.domain.service.CouponService;
 import kr.hhplus.be.server.interfaces.dto.response.CouponResponse;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +24,7 @@ public class CouponController {
     }
 
     @PostMapping("/issue/{userId}")
+    @Operation(summary = "issueCoupon", description = "쿠폰 발급")
     public ResponseEntity<Boolean> issueCoupon(@PathVariable Long userId) {
         return couponService.issueCoupon(userId);
     }
