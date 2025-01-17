@@ -66,6 +66,9 @@ dependencies {
     // Lombok
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
+
+    // log
+    implementation ("ca.pjer:logback-awslogs-appender:1.6.0")
 }
 
 tasks.withType<Test> {
