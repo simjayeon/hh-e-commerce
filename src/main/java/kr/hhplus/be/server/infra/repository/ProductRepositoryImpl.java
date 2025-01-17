@@ -1,31 +1,28 @@
 package kr.hhplus.be.server.infra.repository;
 
-import com.querydsl.jpa.impl.JPAQueryFactory;
-import jakarta.persistence.EntityManager;
 import kr.hhplus.be.server.domain.entity.Product;
+import kr.hhplus.be.server.domain.repository.IProductRepository;
+import kr.hhplus.be.server.infra.jpa.ProductJpaRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-import static kr.hhplus.be.server.domain.entity.QProduct.product;
-
-
 @Repository
-public class ProductRepositoryImpl implements ProductRepositoryCustom {
+@RequiredArgsConstructor
+public class ProductRepositoryImpl implements IProductRepository {
 
-    private final JPAQueryFactory queryFactory;
+    private final ProductJpaRepository productJpaRepository;
 
-    public ProductRepositoryImpl(EntityManager em) {
-        this.queryFactory = new JPAQueryFactory(em);
+    @Override
+    public Page<Product> findAll(Pageable pageable) {
+        return productJpaRepository.findAll(pageable);
     }
 
     @Override
-    public List<Product> searchByPagination(int offset, int limit) {
-        return queryFactory.selectFrom(product)
-                .where(product.quantity.lt(0))
-                .offset(offset)
-                .limit(limit)
-                .fetch();
+    public List<Product> findAllByIdIn(List<Long> ids) {
+        return productJpaRepository.findAllByIdIn(ids);
     }
-
 }

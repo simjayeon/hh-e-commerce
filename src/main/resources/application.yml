@@ -1,6 +1,10 @@
 spring:
   application:
     name: hhplus
+  security:
+    user:
+      name: admin
+      password: qwer1234
   profiles:
     active: local
   datasource:
@@ -24,11 +28,15 @@ spring:
     api-docs:
       path: /v3/api-docs
     swagger-ui:
-      path: /swagger-ui.html
+      path: /swagger-ui.
 logging:
   level:
     org:
-      springframework=DEBUG:
+      springframework: DEBUG
+      springframework.web: DEBUG
+      springframework.security: DEBUG
+      apache.coyote.http11: DEBUG
+      apache.tomcat: DEBUG
 
 ---
 spring.config.activate.on-profile: local, test

@@ -1,12 +1,16 @@
 package kr.hhplus.be.server.infra.repository;
 
 import kr.hhplus.be.server.domain.entity.User;
-import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
+import kr.hhplus.be.server.domain.repository.IUserRepository;
 
-public class UserRepositoryImpl extends QuerydslRepositorySupport implements UserRepositoryCustom {
+public class UserRepositoryImpl implements IUserRepository {
 
-    public UserRepositoryImpl() {
-        super(User.class);
+    @Override
+    public void save(User user) {}
+
+    @Override
+    public User findById(Long userId) {
+       return null;
     }
 
 }

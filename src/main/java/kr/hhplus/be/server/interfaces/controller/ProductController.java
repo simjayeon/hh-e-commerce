@@ -4,6 +4,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import kr.hhplus.be.server.domain.service.ProductService;
 import kr.hhplus.be.server.interfaces.dto.response.ProductResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,9 +20,8 @@ public class ProductController {
 
     @GetMapping("")
     @Operation(summary = "getProducts", description = "상품 목록 조회")
-    public ResponseEntity<List<ProductResponse>> getProducts(@RequestParam(defaultValue = "0") int page,
-                                                             @RequestParam(defaultValue = "10") int size) {
-        return productService.getProducts(page, size);
+    public ResponseEntity<Page<ProductResponse>> getProducts(Pageable pageable) {
+        return productService.getProducts(pageable);
     }
 
     @GetMapping("/top5")

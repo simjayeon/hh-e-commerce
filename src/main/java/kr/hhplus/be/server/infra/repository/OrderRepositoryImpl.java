@@ -1,38 +1,30 @@
 package kr.hhplus.be.server.infra.repository;
 
-import com.querydsl.jpa.impl.JPAQueryFactory;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import kr.hhplus.be.server.domain.entity.Order;
+import kr.hhplus.be.server.domain.repository.IOrderRepository;
+import kr.hhplus.be.server.infra.jpa.OrderJpaRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-import static kr.hhplus.be.server.domain.entity.QOrder.order;
-
 
 @Repository
-public class OrderRepositoryImpl implements OrderRepositoryCustom {
+@RequiredArgsConstructor
+public class OrderRepositoryImpl implements IOrderRepository {
 
-    @PersistenceContext
-    EntityManager em;
+    private final OrderJpaRepository orderJpaRepository;
 
-    private final JPAQueryFactory queryFactory;
-
-    public OrderRepositoryImpl() {
-        this.queryFactory = new JPAQueryFactory(em);
+    @Override
+    public List<Order> findAllByUserIdAndOrderById(Long userId, Long orderId) {
+        return orderJpaRepository.findAllByUserIdAndId(userId, orderId);
     }
 
     @Override
-    public List<Order> findByUserIdAndOrderId(Long userId, Long orderId) {
-        return queryFactory.selectFrom(order)
-                .where(order.userId.eq(userId).and(order.id.eq(orderId)))
-                .fetch();
-    }
-
-    @Override
+    @Transactional
     public void save(Order order) {
-        em.persist(order);
+        orderJpaRepository.save(order);
     }
 
 }
